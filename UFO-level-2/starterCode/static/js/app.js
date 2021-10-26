@@ -17,7 +17,12 @@ button.on("click", function() {
 
     console.log(inputValue);
 
-    var filteredData = tableData.filter(sighting => sighting.datetime == inputValue);
+    var filteredData = tableData.filter(sighting => 
+        sighting.datetime === inputValue ||
+        sighting.city === inputValue ||
+        sighting.state === inputValue ||
+        sighting.country === inputValue ||
+        sighting.shape === inputValue);
 
     console.log(filteredData);
 
@@ -43,5 +48,9 @@ button.on("click", function() {
     //         cell.text(value);
     //     })
     // });
+
+function changeName(name) {
+    document.getElementById("peep").innerHTML = name;
+}
 
 });
